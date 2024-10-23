@@ -82,7 +82,7 @@ def browse_links(driver):
 def main(driver):
     driver.get(url=url)
     assert 'Википедия' in driver.title
-    time.sleep(3)
+    time.sleep(1)
     user_topic = input('Введите тему для поиска на Вики: ')
 
     try:
@@ -92,7 +92,7 @@ def main(driver):
 
         search_article = driver.find_element(By.LINK_TEXT, user_topic.title())
         search_article.click()
-        time.sleep(5)
+        time.sleep(2)
 
         print("Для вывода каждого следующего параграфа жмите 'Enter'.\n")
         browse_paragraphs(driver)
